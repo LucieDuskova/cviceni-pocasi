@@ -85,22 +85,52 @@ const predpoved = {
   },
 };
 
+const mainElement = document.querySelector(".container")
 
-const pocasiID = window.location.hash.slice(1);
-const pocasiData = predpoved[pocasiID];
-const mainElement = document.querySelector('main');
 
 mainElement.innerHTML += `
-  <article>
-    <h2>${pocasiData.den}</h2>
-    <p>${pocasiData.datum}</p>
-    <p>Denní telota: ${pocasiData.denni_teplota} C</p>
-    <p>Ranní telota: ${pocasiData.ranni_teplota} C</p>
-    <p>Odpolední telota: ${pocasiData.odpoledni_teplota} C</p>
-    <p>Večerní telota: ${pocasiData.vecerni_teplota} C</p>
-    <p>Stav počasí: ${pocasiData.stav_pocasi} </p>
-    <p>Tlak: ${pocasiData.tlak} </p>
-    <p>Rychlost větru: ${pocasiData.rychlost_vetru} </p>
-    <p>Popis počasí: ${pocasiData.popis_pocasi} </p>
-  </article>
+  <div class="article-card">
+    <h2>${predpoved.pondeli.den}</h2>
+    <p>Denní telota: ${predpoved.pondeli.denni_teplota} C</p>
+    <p>${predpoved.pondeli.stav_pocasi}</p>
+    <a href="detail.html#pondeli">Přečíst celý článek</a>
+  </div>
+`;
+
+
+mainElement.innerHTML += `
+  <div class="article-card">
+    <h2>${predpoved.utery.den}</h2>
+    <p>Denní telota: ${predpoved.utery.denni_teplota} C</p>
+    <p>${predpoved.utery.stav_pocasi}</p>
+    <a href="detail.html#utery">Přečíst celý článek</a>
+  </div>
+`;
+
+mainElement.innerHTML += `
+  <div class="article-card">
+    <h2>${predpoved.streda.den}</h2>
+    <p>Denní telota: ${predpoved.streda.denni_teplota} C</p>
+    <p>${predpoved.streda.stav_pocasi}</p>
+    <a href="detail.html#streda">Přečíst celý článek</a>
+  </div>
+`;
+
+
+mainElement.innerHTML += `
+  <div class="article-card">
+    <h2>${predpoved.ctvrtek.den}</h2>
+    <p>Denní telota: ${predpoved.ctvrtek.denni_teplota} C</p>
+    <p>${predpoved.ctvrtek.stav_pocasi}</p>
+    <a href="detail.html#ctvrtek">Přečíst celý článek</a>
+  </div>
+`;
+
+mainElement.innerHTML += `
+  <div class="article-card">
+    <h2>${predpoved.patek.den}</h2>
+    <p>Denní telota: ${predpoved.patek.denni_teplota} C</p>
+    <p>${predpoved.patek.stav_pocasi}</p>
+    <a href="detail.html#patek">Přečíst celý článek</a>
+  </div>
 `;
